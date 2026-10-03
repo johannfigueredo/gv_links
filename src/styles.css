@@ -1,0 +1,119 @@
+:root {
+  --red: #c8102e;
+  --red-dark: #9d0c24;
+  --green: #1f7a3d;
+  --green-dark: #0f4d27;
+  --green-soft: #eaf4ec;
+  --ink: #1b2a21;
+  --muted: #5d6b63;
+  --paper: #ffffff;
+  --line: #dfe8e2;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: #f6faf7;
+  min-height: 100vh;
+}
+#root { position: relative; min-height: 100vh; padding: max(24px, env(safe-area-inset-top)) 28px max(140px, calc(110px + env(safe-area-inset-bottom))); }
+main { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+
+/* ---------- Fondo ---------- */
+.bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  background: linear-gradient(180deg, #ffffff 0%, #f6faf7 100%); }
+.hills { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 120px; }
+.hills .h1 { fill: #e3f0e7; }
+.hills .h2 { fill: #cfe5d6; }
+
+/* ---------- Encabezado ---------- */
+header { text-align: center; padding: 8px 0 22px; }
+.logo { margin: 0 0 10px; line-height: 0; }
+.logo img { width: min(100%, 250px); height: auto; }
+header p { margin: 0; color: var(--muted); font-size: 14px; font-weight: 500; }
+
+/* ---------- Banner Open Day ---------- */
+.hero {
+  position: relative; display: block; text-decoration: none; color: #fff;
+  border-radius: 20px; overflow: hidden; isolation: isolate;
+  aspect-ratio: 4 / 3; min-height: 250px;
+  background: var(--green-dark);
+  box-shadow: 0 14px 28px -18px rgba(15, 77, 39, .5);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.hero:hover, .hero:focus-visible { transform: translateY(-2px); box-shadow: 0 18px 30px -18px rgba(15, 77, 39, .55); }
+.hero .scene, .hero .photo { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
+.hero .photo { object-fit: cover; object-position: 50% 30%; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to top, rgba(8, 40, 20, .88) 0%, rgba(8, 40, 20, .55) 32%, rgba(8, 40, 20, 0) 62%);
+}
+.hero-inner { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+.tag {
+  align-self: flex-start; background: var(--red); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  padding: 7px 12px 7px 14px; border-radius: 6px;
+}
+.hero h2 { font-family: var(--serif); font-weight: 800; font-size: clamp(34px, 11vw, 48px); line-height: .95; margin: 0 0 12px; letter-spacing: -1.5px; }
+.hero h2 small { display: block; font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: .02em; opacity: .92; margin-top: 10px; }
+.cta {
+  display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--red-dark);
+  font-weight: 700; font-size: 14px; padding: 11px 16px 11px 18px; border-radius: 999px;
+}
+.cta svg { width: 16px; height: 16px; stroke-width: 2.5; transition: transform .25s; }
+.hero:hover .cta svg { transform: translateX(4px); }
+
+/* ---------- Tarjetas ---------- */
+.stack { display: grid; gap: 10px; margin-top: 12px; }
+.card {
+  display: flex; align-items: center; gap: 14px; padding: 14px 16px;
+  text-decoration: none; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.card:hover, .card:focus-visible { border-color: var(--green); transform: translateY(-1px); }
+.ico { flex: none; width: 40px; height: 40px; border-radius: 10px; background: var(--green-soft); color: var(--green-dark); display: grid; place-items: center; }
+.ico svg { width: 20px; height: 20px; }
+.txt { flex: 1; min-width: 0; }
+.txt b { display: block; font-size: 15px; font-weight: 700; }
+.txt span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.arrow { flex: none; width: 16px; height: 16px; stroke-width: 2.5; color: #a3b0a8; transition: transform .2s, color .2s; }
+.card:hover .arrow { transform: translateX(3px); color: var(--red); }
+
+/* ---------- Redes ---------- */
+.social-title { margin: 28px 0 10px; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.social { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.social a {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px 12px;
+  text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 600;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+  transition: border-color .2s, transform .2s;
+}
+.social a svg { width: 22px; height: 22px; color: var(--green); }
+.social a:hover, .social a:focus-visible { border-color: var(--green); transform: translateY(-1px); }
+
+footer { text-align: center; margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+a:focus-visible { transform: translateY(-3px); background: var(--green); box-shadow: 0 0 0 1px var(--green); color: #fff; }
+.social a:hover svg, .social a:focus-visible svg { color: #fff; }
+.social a:nth-child(2):hover, .social a:nth-child(2):focus-visible { background: var(--red); box-shadow: 0 0 0 1px var(--red); }
+
+footer { text-align: center; margin-top: 30px; color: #fff; font-size: 12px; font-weight: 600; text-shadow: 0 1px 6px rgba(8, 40, 20, .6); }
+footer i { display: inline-block; width: 26px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, #fff 50%, var(--red) 50%); margin-bottom: 10px; }
+
+a:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+/* ---------- Entrada suave ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  header, .hero, .card, .social-title, .social, footer { animation: rise .6s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero { animation-delay: .08s; }
+  .stack .card:nth-child(1) { animation-delay: .16s; }
+  .stack .card:nth-child(2) { animation-delay: .22s; }
+  .stack .card:nth-child(3) { animation-delay: .28s; }
+  .social-title { animation-delay: .34s; } .social { animation-delay: .4s; } footer { animation-delay: .46s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+}
