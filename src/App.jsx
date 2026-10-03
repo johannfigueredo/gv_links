@@ -111,7 +111,7 @@ export default function App() {
       <main>
         <header>
           <h1 className="logo">
-            <img src="./assets/GV logo horizontal+bisel.PNG" alt="Gimnasio Vallegrande" />
+            <img src="./assets/logo.png" alt="Gimnasio Vallegrande" />
           </h1>
           <p>Soy el mejor para bien de los demás.</p>
         </header>
