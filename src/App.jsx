@@ -143,6 +143,13 @@ export default function App() {
                 2026
                 <small>Ven a conocer nuestro gimnasio · Reserva tu cupo</small>
               </h2>
+              <p className="date">
+                <Icon>
+                  <rect x="3" y="5" width="18" height="16" rx="3" />
+                  <path d="M8 3v4M16 3v4M3 10h18" />
+                </Icon>
+                14 de octubre · 11:00 a. m.
+              </p>
               <span className="cta">
                 Reservar mi lugar
                 <Icon>

@@ -60,6 +60,8 @@ header p { margin: 0; color: var(--muted); font-size: 14px; font-weight: 500; }
 }
 .hero h2 { font-family: var(--serif); font-weight: 800; font-size: clamp(34px, 11vw, 48px); line-height: .95; margin: 0 0 12px; letter-spacing: -1.5px; }
 .hero h2 small { display: block; font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: .02em; opacity: .92; margin-top: 10px; }
+.hero .date { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 14px; font-size: 14px; font-weight: 700; letter-spacing: .01em; }
+.hero .date svg { width: 17px; height: 17px; }
 .cta {
   display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--red-dark);
   font-weight: 700; font-size: 14px; padding: 11px 16px 11px 18px; border-radius: 999px;
